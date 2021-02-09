@@ -10,8 +10,7 @@ namespace ArchSoft
     class TableFill
     {
         DataTable table = new DataTable();
-        private double factor = 0.0;
-        private int result = 0;
+        private int result;
 
         public TableFill()
         {
@@ -22,8 +21,14 @@ namespace ArchSoft
             table.Columns.Add("დ.დ.", typeof(int));
         }
 
-        public void GetValues(string type1, string type2, double scale)
+        private static decimal CustomRound(decimal x)
         {
+            return decimal.Round(x - 0.001m, 2, MidpointRounding.AwayFromZero);
+        }
+
+        public void GetValues(string type1, string type2, double scale, double factor)
+        {
+            result = (int)Math.Round(scale / factor);
             table.Rows.Add(type1, type2, scale, factor, result);
         }
 

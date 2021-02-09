@@ -48,7 +48,6 @@ namespace ArchSoft
             for (int i = 0; i < data.Length; i++)
             {
                 dataSource[i] = data[i].Split(';');
-                
             }
             
             // Creating Table, Setting formats
