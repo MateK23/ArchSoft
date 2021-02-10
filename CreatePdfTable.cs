@@ -13,8 +13,6 @@ namespace ArchSoft
     {
         public CreatePdfTable()
         {
-            
-
             // Margin
             PdfUnitConvertor unitCvtr = new PdfUnitConvertor();
             PdfMargins margin = new PdfMargins();

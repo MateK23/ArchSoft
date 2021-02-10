@@ -264,4 +264,3 @@ namespace ArchSoft
         private System.Windows.Forms.Button minimizeBtn;
     }
 }
-
