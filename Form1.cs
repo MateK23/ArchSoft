@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace ArchSoft
 {
@@ -77,6 +78,7 @@ namespace ArchSoft
                 logOutput.Text = exception.ToString();
             }
         }
+        
 
         private void btnMain_Leave(object sender, EventArgs e)
         {
@@ -91,6 +93,38 @@ namespace ArchSoft
         private void btnWrite_Leave(object sender, EventArgs e)
         {
             btnWrite.BackColor = Color.FromArgb(24, 30, 54);
+        }
+
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void minimizeBtn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        public const int WM_NCLButton = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLButton, HT_CAPTION, 0);
+            }
+        }
+        
+        private void logOutput_Click_1(object sender, EventArgs e)
+        {
+            logOutput.Text = "";
         }
     }
 }

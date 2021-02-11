@@ -40,6 +40,8 @@ namespace ArchSoft
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.logOutput = new System.Windows.Forms.Label();
+            this.closeBtn = new System.Windows.Forms.Button();
+            this.minimizeBtn = new System.Windows.Forms.Button();
             this.userControl21 = new ArchSoft.UserControl2();
             this.userControl11 = new ArchSoft.UserControl1();
             this.panel1.SuspendLayout();
@@ -59,7 +61,7 @@ namespace ArchSoft
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(166, 450);
+            this.panel1.Size = new System.Drawing.Size(166, 480);
             this.panel1.TabIndex = 0;
             // 
             // pnlNav
@@ -77,7 +79,7 @@ namespace ArchSoft
             this.btnWrite.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWrite.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWrite.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnWrite.Location = new System.Drawing.Point(0, 400);
+            this.btnWrite.Location = new System.Drawing.Point(0, 430);
             this.btnWrite.Name = "btnWrite";
             this.btnWrite.Size = new System.Drawing.Size(166, 50);
             this.btnWrite.TabIndex = 4;
@@ -155,9 +157,9 @@ namespace ArchSoft
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.panel3.Controls.Add(this.userControl21);
             this.panel3.Controls.Add(this.userControl11);
-            this.panel3.Location = new System.Drawing.Point(181, 12);
+            this.panel3.Location = new System.Drawing.Point(172, 36);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(607, 398);
+            this.panel3.Size = new System.Drawing.Size(790, 398);
             this.panel3.TabIndex = 3;
             // 
             // logOutput
@@ -165,18 +167,45 @@ namespace ArchSoft
             this.logOutput.AutoSize = true;
             this.logOutput.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logOutput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.logOutput.Location = new System.Drawing.Point(182, 422);
+            this.logOutput.Location = new System.Drawing.Point(181, 439);
             this.logOutput.Name = "logOutput";
             this.logOutput.Size = new System.Drawing.Size(28, 15);
             this.logOutput.TabIndex = 6;
             this.logOutput.Text = "Log";
+            this.logOutput.Click += new System.EventHandler(this.logOutput_Click_1);
+            // 
+            // closeBtn
+            // 
+            this.closeBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeBtn.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeBtn.Location = new System.Drawing.Point(937, 5);
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.Size = new System.Drawing.Size(25, 25);
+            this.closeBtn.TabIndex = 24;
+            this.closeBtn.Text = "X";
+            this.closeBtn.UseVisualStyleBackColor = true;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
+            // 
+            // minimizeBtn
+            // 
+            this.minimizeBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.minimizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minimizeBtn.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minimizeBtn.Location = new System.Drawing.Point(906, 5);
+            this.minimizeBtn.Name = "minimizeBtn";
+            this.minimizeBtn.Size = new System.Drawing.Size(25, 25);
+            this.minimizeBtn.TabIndex = 25;
+            this.minimizeBtn.Text = "_";
+            this.minimizeBtn.UseVisualStyleBackColor = true;
+            this.minimizeBtn.Click += new System.EventHandler(this.minimizeBtn_Click);
             // 
             // userControl21
             // 
             this.userControl21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.userControl21.Location = new System.Drawing.Point(4, 4);
             this.userControl21.Name = "userControl21";
-            this.userControl21.Size = new System.Drawing.Size(600, 391);
+            this.userControl21.Size = new System.Drawing.Size(783, 391);
             this.userControl21.TabIndex = 1;
             // 
             // userControl11
@@ -184,7 +213,7 @@ namespace ArchSoft
             this.userControl11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.userControl11.Location = new System.Drawing.Point(4, 4);
             this.userControl11.Name = "userControl11";
-            this.userControl11.Size = new System.Drawing.Size(600, 391);
+            this.userControl11.Size = new System.Drawing.Size(783, 391);
             this.userControl11.TabIndex = 0;
             // 
             // Form1
@@ -193,17 +222,20 @@ namespace ArchSoft
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(966, 480);
+            this.Controls.Add(this.closeBtn);
+            this.Controls.Add(this.minimizeBtn);
             this.Controls.Add(this.logOutput);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ArchSoft";
             this.TransparencyKey = System.Drawing.Color.Black;
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -228,6 +260,7 @@ namespace ArchSoft
         private UserControl1 userControl11;
         private UserControl2 userControl21;
         private System.Windows.Forms.Label logOutput;
+        private System.Windows.Forms.Button closeBtn;
+        private System.Windows.Forms.Button minimizeBtn;
     }
 }
-

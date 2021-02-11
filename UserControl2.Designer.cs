@@ -30,12 +30,10 @@ namespace ArchSoft
         private void InitializeComponent()
         {
             this.radioPDF = new System.Windows.Forms.RadioButton();
-            this.radioWord = new System.Windows.Forms.RadioButton();
             this.radioNotepad = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.currentDir = new System.Windows.Forms.Label();
-            this.radioExcell = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.outputFormatTextBox = new System.Windows.Forms.TextBox();
             this.fileFormat = new System.Windows.Forms.Label();
@@ -62,24 +60,12 @@ namespace ArchSoft
             this.radioPDF.Text = "PDF";
             this.radioPDF.UseVisualStyleBackColor = true;
             // 
-            // radioWord
-            // 
-            this.radioWord.AutoSize = true;
-            this.radioWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioWord.ForeColor = System.Drawing.Color.Red;
-            this.radioWord.Location = new System.Drawing.Point(95, 43);
-            this.radioWord.Name = "radioWord";
-            this.radioWord.Size = new System.Drawing.Size(130, 20);
-            this.radioWord.TabIndex = 1;
-            this.radioWord.Text = "Microsoft Word";
-            this.radioWord.UseVisualStyleBackColor = true;
-            // 
             // radioNotepad
             // 
             this.radioNotepad.AutoSize = true;
             this.radioNotepad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioNotepad.ForeColor = System.Drawing.Color.Red;
-            this.radioNotepad.Location = new System.Drawing.Point(407, 43);
+            this.radioNotepad.Location = new System.Drawing.Point(91, 43);
             this.radioNotepad.Name = "radioNotepad";
             this.radioNotepad.Size = new System.Drawing.Size(86, 20);
             this.radioNotepad.TabIndex = 2;
@@ -118,18 +104,6 @@ namespace ArchSoft
             this.currentDir.Size = new System.Drawing.Size(81, 16);
             this.currentDir.TabIndex = 6;
             this.currentDir.Text = "Current Dir";
-            // 
-            // radioExcell
-            // 
-            this.radioExcell.AutoSize = true;
-            this.radioExcell.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioExcell.ForeColor = System.Drawing.Color.Red;
-            this.radioExcell.Location = new System.Drawing.Point(248, 43);
-            this.radioExcell.Name = "radioExcell";
-            this.radioExcell.Size = new System.Drawing.Size(135, 20);
-            this.radioExcell.TabIndex = 7;
-            this.radioExcell.Text = "Microsoft Excell";
-            this.radioExcell.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -182,12 +156,10 @@ namespace ArchSoft
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.radioPDF);
-            this.panel1.Controls.Add(this.radioWord);
             this.panel1.Controls.Add(this.radioNotepad);
-            this.panel1.Controls.Add(this.radioExcell);
             this.panel1.Location = new System.Drawing.Point(9, 46);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(581, 76);
+            this.panel1.Size = new System.Drawing.Size(762, 76);
             this.panel1.TabIndex = 12;
             // 
             // panel2
@@ -197,7 +169,7 @@ namespace ArchSoft
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(9, 128);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(581, 76);
+            this.panel2.Size = new System.Drawing.Size(762, 76);
             this.panel2.TabIndex = 13;
             // 
             // panel3
@@ -208,7 +180,7 @@ namespace ArchSoft
             this.panel3.Controls.Add(this.outputFormatTextBox);
             this.panel3.Location = new System.Drawing.Point(9, 210);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(581, 76);
+            this.panel3.Size = new System.Drawing.Size(762, 76);
             this.panel3.TabIndex = 14;
             // 
             // UserControl2
@@ -221,7 +193,7 @@ namespace ArchSoft
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Name = "UserControl2";
-            this.Size = new System.Drawing.Size(600, 391);
+            this.Size = new System.Drawing.Size(781, 398);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -236,12 +208,10 @@ namespace ArchSoft
         #endregion
 
         private System.Windows.Forms.RadioButton radioPDF;
-        private System.Windows.Forms.RadioButton radioWord;
         private System.Windows.Forms.RadioButton radioNotepad;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label currentDir;
-        private System.Windows.Forms.RadioButton radioExcell;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox outputFormatTextBox;
         private System.Windows.Forms.Label fileFormat;

@@ -13,8 +13,6 @@ namespace ArchSoft
     {
         public CreatePdfTable()
         {
-            
-
             // Margin
             PdfUnitConvertor unitCvtr = new PdfUnitConvertor();
             PdfMargins margin = new PdfMargins();
@@ -48,7 +46,6 @@ namespace ArchSoft
             for (int i = 0; i < data.Length; i++)
             {
                 dataSource[i] = data[i].Split(';');
-                
             }
             
             // Creating Table, Setting formats
