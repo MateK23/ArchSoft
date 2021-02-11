@@ -37,7 +37,7 @@ namespace ArchSoft
             {
                 line = file.ReadLine();
                 lineArr = line.Split('=' /*, System.StringSplitOptions.RemoveEmptyEntries*/);
-                System.Diagnostics.Debug.WriteLine(line.ToString());
+                //System.Diagnostics.Debug.WriteLine(line.ToString());
                 dict.Add(lineArr[0], lineArr[1]);
             }
 
@@ -80,32 +80,59 @@ namespace ArchSoft
             {
                 if (factor.Text == "" && result.Text == "")
                 {
-                    obj1.GetValues(type1.Text, type2.Text, double.Parse(scale.Text), Compare(type1.Text), 0);
+
+                    // System.Diagnostics.Debug.WriteLine("Value is Double");
+                    // if (Double.TryParse(scale.Text, out parsedScale))
+                    // {
+                    //     System.Diagnostics.Debug.WriteLine("Value isn't Double");
+                    // }s
+
+                    if (Double.TryParse(scale.Text, out parsedScale))
+                    {
+                        obj1.GetValues(type1.Text, type2.Text, Convert.ToDouble(Int32.Parse(scale.Text)), 0, 0);
+                    }
+                    else
+                    {
+                        obj1.GetValues(type1.Text, type2.Text, double.Parse(scale.Text), 0, 0);
+                    }
                 }
                 else if (result.Text == "")
                 {
-                    obj1.GetValues(type1.Text, type2.Text, double.Parse(scale.Text), Compare(type1.Text), 0);
+                    if (Double.TryParse(scale.Text, out parsedScale))
+                    {
+                        obj1.GetValues(type1.Text, type2.Text, Convert.ToDouble(Int32.Parse(scale.Text)), double.Parse(factor.Text), 0);
+                    }
+                    else
+                    {
+                        obj1.GetValues(type1.Text, type2.Text, double.Parse(scale.Text), double.Parse(factor.Text), 0);
+                    }
                 }
                 else if (factor.Text == "")
                 {
-                    obj1.GetValues(type1.Text, type2.Text, double.Parse(scale.Text), 0, Int32.Parse(result.Text));
+                    if (Double.TryParse(scale.Text, out parsedScale))
+                    {
+                        obj1.GetValues(type1.Text, type2.Text, Convert.ToDouble(Int32.Parse(scale.Text)), 0, Int32.Parse(result.Text));
+                    }
+                    else
+                    {
+                        obj1.GetValues(type1.Text, type2.Text, double.Parse(scale.Text), 0, Int32.Parse(result.Text));
+                    }
                 }
                 else
                 {
                     if (Double.TryParse(scale.Text, out parsedScale))
                     {
-                        obj1.GetValues(type1.Text, type2.Text, parsedScale, double.Parse(factor.Text),
-                            Int32.Parse(result.Text));
+                        obj1.GetValues(type1.Text, type2.Text, Convert.ToDouble(Int32.Parse(scale.Text)), double.Parse(factor.Text),Int32.Parse(result.Text));
                     }
                     else
                     {
-                        obj1.GetValues(type1.Text, type2.Text, Convert.ToDouble(Int32.Parse(scale.Text)), double.Parse(factor.Text),
-                            Int32.Parse(result.Text));
+                        obj1.GetValues(type1.Text, type2.Text, parsedScale, double.Parse(factor.Text),Int32.Parse(result.Text));
                     }
                 }
             }
             catch (Exception exception)
             {
+                // System.Diagnostics.Debug.WriteLine(exception);
             }
 
             dataGridView1.DataSource = obj1.TableRetrun();

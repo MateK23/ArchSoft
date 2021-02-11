@@ -5,10 +5,6 @@ using System.Drawing;
 using spire::Spire.Pdf;
 using spire::Spire.Pdf.Graphics;
 using spire::Spire.Pdf.Tables;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 
 namespace ArchSoft
@@ -39,7 +35,6 @@ namespace ArchSoft
                 factor = Compare(type1);
                 result = (int)Math.Floor(scale / factor);
             }
-
             if (result == 0 && factor != 0)
             {
                 result = (int)Math.Round(scale / factor);
@@ -49,8 +44,6 @@ namespace ArchSoft
                 factor = 0;
                 result = 0;
             }
-
-
             table.Rows.Add(type1, type2, scale, factor, result);
         }
 
@@ -141,7 +134,6 @@ namespace ArchSoft
                     returnFactor = 0; // Other
                     break;
             }
-
             return returnFactor;
         }
 
@@ -189,7 +181,6 @@ namespace ArchSoft
             }
 
             dt.Rows.InsertAt(headerRow, 0);
-
             PdfTable table = new PdfTable();
             table.Style.CellPadding = 2;
             table.Style.HeaderSource = PdfHeaderSource.Rows;
@@ -201,7 +192,6 @@ namespace ArchSoft
             table.Style.AlternateStyle.Font = new PdfTrueTypeFont(fontFileName, 10f);
             PdfLayoutResult result = table.Draw(page, new PointF(0, y));
             y = y + result.Bounds.Height + 5;
-
 
             doc.SaveToFile("TestTable.pdf");
             doc.Close();
