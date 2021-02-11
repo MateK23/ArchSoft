@@ -177,7 +177,7 @@ namespace ArchSoft
             // closeBtn
             // 
             this.closeBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.closeBtn.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeBtn.Location = new System.Drawing.Point(937, 5);
             this.closeBtn.Name = "closeBtn";
@@ -190,8 +190,9 @@ namespace ArchSoft
             // minimizeBtn
             // 
             this.minimizeBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.minimizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minimizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.minimizeBtn.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minimizeBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.minimizeBtn.Location = new System.Drawing.Point(906, 5);
             this.minimizeBtn.Name = "minimizeBtn";
             this.minimizeBtn.Size = new System.Drawing.Size(25, 25);

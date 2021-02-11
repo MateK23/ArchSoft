@@ -20,42 +20,10 @@ namespace ArchSoft
 
         TableFill obj1 = new TableFill();
         private int selection;
-        private string log;
-        private double res;
-
-        private double Compare(String value)
-        {
-            // var data = File.ReadAllLines(@"D:\Users\MateK23\Desktop\data.txt");
-
-            string[] lineArr;
-            string line;
-
-            System.IO.StreamReader file = new System.IO.StreamReader(@"D:\Users\MateK23\Desktop\data.txt");
-            Dictionary<string, string> dict = new Dictionary<string, string>();
-
-            while (file.ReadLine() != null)
-            {
-                line = file.ReadLine();
-                lineArr = line.Split('=' /*, System.StringSplitOptions.RemoveEmptyEntries*/);
-                //System.Diagnostics.Debug.WriteLine(line.ToString());
-                dict.Add(lineArr[0], lineArr[1]);
-            }
-
-            foreach (var item in dict)
-            {
-                if (value == item.Key)
-                {
-                    res = double.Parse(item.Value);
-                }
-            }
-
-            file.Close();
-
-            return res;
-        }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -81,19 +49,9 @@ namespace ArchSoft
                 if (factor.Text == "" && result.Text == "")
                 {
 
-                    // System.Diagnostics.Debug.WriteLine("Value is Double");
-                    // if (Double.TryParse(scale.Text, out parsedScale))
-                    // {
-                    //     System.Diagnostics.Debug.WriteLine("Value isn't Double");
-                    // }s
-
                     if (Double.TryParse(scale.Text, out parsedScale))
                     {
-                        obj1.GetValues(type1.Text, type2.Text, Convert.ToDouble(Int32.Parse(scale.Text)), 0, 0);
-                    }
-                    else
-                    {
-                        obj1.GetValues(type1.Text, type2.Text, double.Parse(scale.Text), 0, 0);
+                        obj1.GetValues(type1.Text, type2.Text, parsedScale, 0, 0);
                     }
                 }
                 else if (result.Text == "")
@@ -102,10 +60,6 @@ namespace ArchSoft
                     {
                         obj1.GetValues(type1.Text, type2.Text, Convert.ToDouble(Int32.Parse(scale.Text)), double.Parse(factor.Text), 0);
                     }
-                    else
-                    {
-                        obj1.GetValues(type1.Text, type2.Text, double.Parse(scale.Text), double.Parse(factor.Text), 0);
-                    }
                 }
                 else if (factor.Text == "")
                 {
@@ -113,20 +67,12 @@ namespace ArchSoft
                     {
                         obj1.GetValues(type1.Text, type2.Text, Convert.ToDouble(Int32.Parse(scale.Text)), 0, Int32.Parse(result.Text));
                     }
-                    else
-                    {
-                        obj1.GetValues(type1.Text, type2.Text, double.Parse(scale.Text), 0, Int32.Parse(result.Text));
-                    }
                 }
                 else
                 {
                     if (Double.TryParse(scale.Text, out parsedScale))
                     {
                         obj1.GetValues(type1.Text, type2.Text, Convert.ToDouble(Int32.Parse(scale.Text)), double.Parse(factor.Text),Int32.Parse(result.Text));
-                    }
-                    else
-                    {
-                        obj1.GetValues(type1.Text, type2.Text, parsedScale, double.Parse(factor.Text),Int32.Parse(result.Text));
                     }
                 }
             }
@@ -140,22 +86,27 @@ namespace ArchSoft
 
         private void type1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
         }
 
         private void type2_SelectedIndexChanged(object sender, EventArgs e)
         {
+
         }
 
         private void scale_TextChanged(object sender, EventArgs e)
         {
+
         }
 
         private void factor_TextChanged(object sender, EventArgs e)
         {
+
         }
 
         private void result_TextChanged(object sender, EventArgs e)
         {
+
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -177,6 +128,7 @@ namespace ArchSoft
 
         private void dataGridView1_MouseUp(object sender, MouseEventArgs e)
         {
+
         }
     }
 }

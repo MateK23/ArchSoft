@@ -19,8 +19,6 @@ namespace ArchSoft
             InitializeComponent();
 
             logOutput.Text = "";
-
-            // Navigation Animation
             pnlNav.Height = btnMain.Height;
             pnlNav.Top = btnMain.Top;
             pnlNav.Left = btnMain.Left;
@@ -64,17 +62,12 @@ namespace ArchSoft
             try
             {
                 CreatePdfTable obj1 = new CreatePdfTable();
-
-                // Success message
                 logOutput.ForeColor = System.Drawing.Color.Green;
                 logOutput.Text = "File Saved";
             }
             catch (Exception exception)
             {
-                // Error message
-
                 logOutput.ForeColor = System.Drawing.Color.Red;
-                // logOutput.Text = exception.Message;
                 logOutput.Text = exception.ToString();
             }
         }

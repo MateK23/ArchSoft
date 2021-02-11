@@ -30,6 +30,7 @@ namespace ArchSoft
 
         public void GetValues(string type1, string type2, double scale, double factor, int result)
         {
+            System.Diagnostics.Debug.WriteLine(scale);
             if (factor == 0)
             {
                 factor = Compare(type1);
@@ -44,6 +45,7 @@ namespace ArchSoft
                 factor = 0;
                 result = 0;
             }
+            
             table.Rows.Add(type1, type2, scale, factor, result);
         }
 
