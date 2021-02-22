@@ -62,14 +62,23 @@ namespace ArchSoft
                 case "თვ-1":
                     returnFactor = 2.7;
                     break;
-                case "თვ-2":
-                    returnFactor = 1.4; // 18.6
+                case "თვ-2 1.4":
+                    returnFactor = 1.4; // 18.6 +
                     break;
-                case "თვ-3":
-                    returnFactor = 2.7; // 9.3 1.4
+                case "თვ-2 18.6":
+                    returnFactor = 18.6;
                     break;
-                case "თვ-4":
-                    returnFactor = 0; // Fixed
+                case "თვ-3 2.7":
+                    returnFactor = 2.7; // 9.3 1.4 +
+                    break;
+                case "თვ-3 9.3":
+                    returnFactor = 9.3;
+                    break;
+                case "თვ-3 1.4":
+                    returnFactor = 1.4;
+                    break;
+                case "თვ-4 ფიქსირებული":
+                    returnFactor = 0; // Fixed ----------------------
                     break;
                 case "თვ-5":
                     returnFactor = 0.5;
@@ -77,8 +86,11 @@ namespace ArchSoft
                 case "სქ":
                     returnFactor = 9.3;
                     break;
-                case "სგ":
-                    returnFactor = 1.9; // 4.7
+                case "სგ 1.9":
+                    returnFactor = 1.9; // 4.7 +
+                    break;
+                case "სგ 4.7":
+                    returnFactor = 4.7;
                     break;
                 case "სმ-1":
                     returnFactor = 9.3;
@@ -86,20 +98,20 @@ namespace ArchSoft
                 case "სმ-2":
                     returnFactor = 9.3;
                     break;
-                case "დსშ-1":
-                    returnFactor = 0; // Fixed
+                case "დსშ-1 ფიქსირებული":
+                    returnFactor = 0; // Fixed ----------------------
                     break;
-                case "დსშ-2":
-                    returnFactor = 0; // Fixed
+                case "დსშ-2 ფიქსირებული":
+                    returnFactor = 0; // Fixed ----------------------
                     break;
-                case "დსშ-3":
-                    returnFactor = 0; // Fixed
+                case "დსშ-3 ფიქსირებული":
+                    returnFactor = 0; // Fixed ----------------------
                     break;
-                case "დსშ-4":
-                    returnFactor = 0; // Fixed
+                case "დსშ-4 ფიქსირებული":
+                    returnFactor = 0; // Fixed ----------------------
                     break;
-                case "დსშ-5":
-                    returnFactor = 0; // Fixed
+                case "დსშ-5 ფიქსირებული":
+                    returnFactor = 0; // Fixed ----------------------
                     break;
                 case "დწ-1":
                     returnFactor = 9.3;
@@ -113,8 +125,11 @@ namespace ArchSoft
                 case "დწ-4":
                     returnFactor = 3.7;
                     break;
-                case "სვ":
-                    returnFactor = 2.8; // 5.6
+                case "სვ 2.8":
+                    returnFactor = 2.8; // 5.6 +
+                    break;
+                case "სვ 5.6":
+                    returnFactor = 5.6;
                     break;
                 case "სც-1":
                     returnFactor = 18.6;
