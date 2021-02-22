@@ -33,8 +33,10 @@ namespace ArchSoft
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.type1 = new System.Windows.Forms.ComboBox();
-            this.scale = new System.Windows.Forms.TextBox();
             this.type2 = new System.Windows.Forms.ComboBox();
+            this.result = new System.Windows.Forms.TextBox();
+            this.factor = new System.Windows.Forms.TextBox();
+            this.scale = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.lab1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,8 +45,6 @@ namespace ArchSoft
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.factor = new System.Windows.Forms.TextBox();
-            this.result = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -76,11 +76,11 @@ namespace ArchSoft
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.76975F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86.23025F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.98835F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.01165F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 165F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 186F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 56F));
             this.tableLayoutPanel1.Controls.Add(this.type1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.type2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.result, 4, 0);
@@ -99,24 +99,29 @@ namespace ArchSoft
             this.type1.FormattingEnabled = true;
             this.type1.Items.AddRange(new object[] {
             "თვ-1",
-            "თვ-2",
-            "თვ-3",
-            "თვ-4",
+            "თვ-2 1.4",
+            "თვ-2 18.6",
+            "თვ-3 2.7",
+            "თვ-3 9.3",
+            "თვ-3 1.4",
+            "თვ-4 ფიქსირებული",
             "თვ-5",
             "სქ",
-            "სგ",
+            "სგ 1.9",
+            "სგ 4.7",
             "სმ-1",
             "სმ-2",
-            "დსშ-1",
-            "დსშ-2",
-            "დსშ-3",
-            "დსშ-4",
-            "დსშ-5",
+            "დსშ-1 ფიქსირებული",
+            "დსშ-2 ფიქსირებული",
+            "დსშ-3 ფიქსირებული",
+            "დსშ-4 ფიქსირებული",
+            "დსშ-5 ფიქსირებული",
             "დწ-1",
             "დწ-2",
             "დწ-3",
             "დწ-4",
-            "სვ",
+            "სვ 2.8",
+            "სვ 5.6",
             "სც-1",
             "სც-2",
             "სც-3",
@@ -126,27 +131,43 @@ namespace ArchSoft
             "დს"});
             this.type1.Location = new System.Drawing.Point(3, 3);
             this.type1.Name = "type1";
-            this.type1.Size = new System.Drawing.Size(53, 21);
+            this.type1.Size = new System.Drawing.Size(151, 21);
             this.type1.TabIndex = 2;
             this.type1.SelectedIndexChanged += new System.EventHandler(this.type1_SelectedIndexChanged);
-            // 
-            // scale
-            // 
-            this.scale.Location = new System.Drawing.Point(433, 4);
-            this.scale.Margin = new System.Windows.Forms.Padding(3, 4, 3, 3);
-            this.scale.Name = "scale";
-            this.scale.Size = new System.Drawing.Size(79, 20);
-            this.scale.TabIndex = 4;
-            this.scale.TextChanged += new System.EventHandler(this.scale_TextChanged);
             // 
             // type2
             // 
             this.type2.FormattingEnabled = true;
-            this.type2.Location = new System.Drawing.Point(62, 3);
+            this.type2.Location = new System.Drawing.Point(160, 3);
             this.type2.Name = "type2";
-            this.type2.Size = new System.Drawing.Size(365, 21);
+            this.type2.Size = new System.Drawing.Size(186, 21);
             this.type2.TabIndex = 7;
             this.type2.SelectedIndexChanged += new System.EventHandler(this.type2_SelectedIndexChanged);
+            // 
+            // result
+            // 
+            this.result.Location = new System.Drawing.Point(703, 3);
+            this.result.Name = "result";
+            this.result.Size = new System.Drawing.Size(50, 20);
+            this.result.TabIndex = 9;
+            this.result.TextChanged += new System.EventHandler(this.result_TextChanged);
+            // 
+            // factor
+            // 
+            this.factor.Location = new System.Drawing.Point(517, 3);
+            this.factor.Name = "factor";
+            this.factor.Size = new System.Drawing.Size(180, 20);
+            this.factor.TabIndex = 8;
+            this.factor.TextChanged += new System.EventHandler(this.factor_TextChanged);
+            // 
+            // scale
+            // 
+            this.scale.Location = new System.Drawing.Point(352, 4);
+            this.scale.Margin = new System.Windows.Forms.Padding(3, 4, 3, 3);
+            this.scale.Name = "scale";
+            this.scale.Size = new System.Drawing.Size(159, 20);
+            this.scale.TabIndex = 4;
+            this.scale.TextChanged += new System.EventHandler(this.scale_TextChanged);
             // 
             // btnAdd
             // 
@@ -177,7 +198,7 @@ namespace ArchSoft
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(249)))));
-            this.label3.Location = new System.Drawing.Point(73, 48);
+            this.label3.Location = new System.Drawing.Point(169, 48);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 13);
             this.label3.TabIndex = 17;
@@ -188,7 +209,7 @@ namespace ArchSoft
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(249)))));
-            this.label5.Location = new System.Drawing.Point(455, 48);
+            this.label5.Location = new System.Drawing.Point(361, 48);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 13);
             this.label5.TabIndex = 18;
@@ -238,22 +259,6 @@ namespace ArchSoft
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(763, 287);
             this.panel2.TabIndex = 21;
-            // 
-            // factor
-            // 
-            this.factor.Location = new System.Drawing.Point(518, 3);
-            this.factor.Name = "factor";
-            this.factor.Size = new System.Drawing.Size(180, 20);
-            this.factor.TabIndex = 8;
-            this.factor.TextChanged += new System.EventHandler(this.factor_TextChanged);
-            // 
-            // result
-            // 
-            this.result.Location = new System.Drawing.Point(704, 3);
-            this.result.Name = "result";
-            this.result.Size = new System.Drawing.Size(50, 20);
-            this.result.TabIndex = 9;
-            this.result.TextChanged += new System.EventHandler(this.result_TextChanged);
             // 
             // btnDelete
             // 
