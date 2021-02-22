@@ -61,22 +61,31 @@ namespace ArchSoft
 
         private void btnWrite_Click(object sender, EventArgs e)
         {
-            try
-            {
-                CreatePdfTable obj1 = new CreatePdfTable();
-
-                // Success message
-                logOutput.ForeColor = System.Drawing.Color.Green;
-                logOutput.Text = "File Saved";
-            }
-            catch (Exception exception)
-            {
-                // Error message
-
-                logOutput.ForeColor = System.Drawing.Color.Red;
-                // logOutput.Text = exception.Message;
-                logOutput.Text = exception.ToString();
-            }
+            // try
+            // {
+            //     //
+            //
+            //
+            //     // here goes new pdf code
+            //
+            //
+            //
+            //     //
+            //
+            //     // Success message
+            //     logOutput.ForeColor = System.Drawing.Color.Green;
+            //     logOutput.Text = "File Saved";
+            // }
+            // catch (Exception exception)
+            // {
+            //     // Error message
+            //
+            //     logOutput.ForeColor = System.Drawing.Color.Red;
+            //     // logOutput.Text = exception.Message;
+            //     logOutput.Text = exception.ToString();
+            // }
+            logOutput.ForeColor = System.Drawing.Color.Red;
+            logOutput.Text = "This Button is not yet configured, try using Print Button to Open PDF file\nClick to clear";
         }
         
 

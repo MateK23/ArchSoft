@@ -42,8 +42,8 @@ namespace ArchSoft
             this.logOutput = new System.Windows.Forms.Label();
             this.closeBtn = new System.Windows.Forms.Button();
             this.minimizeBtn = new System.Windows.Forms.Button();
-            this.userControl21 = new ArchSoft.UserControl2();
             this.userControl11 = new ArchSoft.UserControl1();
+            this.userControl21 = new ArchSoft.UserControl2();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -139,7 +139,7 @@ namespace ArchSoft
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "ArchSoft Build v0.1";
+            this.label1.Text = "ArchSoft Build v0.6";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
@@ -155,8 +155,8 @@ namespace ArchSoft
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.panel3.Controls.Add(this.userControl21);
             this.panel3.Controls.Add(this.userControl11);
+            this.panel3.Controls.Add(this.userControl21);
             this.panel3.Location = new System.Drawing.Point(172, 36);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(790, 398);
@@ -177,7 +177,7 @@ namespace ArchSoft
             // closeBtn
             // 
             this.closeBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.closeBtn.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeBtn.Location = new System.Drawing.Point(937, 5);
             this.closeBtn.Name = "closeBtn";
@@ -190,7 +190,7 @@ namespace ArchSoft
             // minimizeBtn
             // 
             this.minimizeBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.minimizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minimizeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.minimizeBtn.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minimizeBtn.Location = new System.Drawing.Point(906, 5);
             this.minimizeBtn.Name = "minimizeBtn";
@@ -200,14 +200,6 @@ namespace ArchSoft
             this.minimizeBtn.UseVisualStyleBackColor = true;
             this.minimizeBtn.Click += new System.EventHandler(this.minimizeBtn_Click);
             // 
-            // userControl21
-            // 
-            this.userControl21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.userControl21.Location = new System.Drawing.Point(4, 4);
-            this.userControl21.Name = "userControl21";
-            this.userControl21.Size = new System.Drawing.Size(783, 391);
-            this.userControl21.TabIndex = 1;
-            // 
             // userControl11
             // 
             this.userControl11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
@@ -215,6 +207,14 @@ namespace ArchSoft
             this.userControl11.Name = "userControl11";
             this.userControl11.Size = new System.Drawing.Size(783, 391);
             this.userControl11.TabIndex = 0;
+            // 
+            // userControl21
+            // 
+            this.userControl21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.userControl21.Location = new System.Drawing.Point(4, 4);
+            this.userControl21.Name = "userControl21";
+            this.userControl21.Size = new System.Drawing.Size(783, 391);
+            this.userControl21.TabIndex = 1;
             // 
             // Form1
             // 

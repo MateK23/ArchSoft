@@ -16,7 +16,6 @@ namespace ArchSoft
     class TableFill
     {
         DataTable table = new DataTable();
-        private static double returnFactor;
 
         public TableFill()
         {
@@ -27,137 +26,27 @@ namespace ArchSoft
             table.Columns.Add("დ.დ.", typeof(int));
         }
 
-        private static decimal CustomRound(decimal x)
-        {
-            return decimal.Round(x - 0.001m, 2, MidpointRounding.AwayFromZero);
-        }
-
         public void GetValues(string type1, string type2, double scale, double factor, int result)
         {
-            if (factor == 0)
+            if (result == 0 || result == null)
             {
-                factor = Compare(type1);
-                result = (int)Math.Floor(scale / factor);
-            }
+                if (factor != 0)
+                {
+                    result = (int)Math.Floor(scale / factor);
+                }
 
-            if (result == 0 && factor != 0)
-            {
-                result = (int)Math.Round(scale / factor);
+                if (result == 0 && factor != 0)
+                {
+                    result = (int)Math.Round(scale / factor);
+                }
+                else if (factor == 0)
+                {
+                    factor = 0;
+                    result = 0;
+                }
             }
-            else if(factor == 0)
-            {
-                factor = 0;
-                result = 0;
-            }
-
 
             table.Rows.Add(type1, type2, scale, factor, result);
-        }
-
-        private static double Compare(string type)
-        {
-            
-            switch (type)
-            {
-                case "თვ-1":
-                    returnFactor = 2.7;
-                    break;
-                case "თვ-2 1.4":
-                    returnFactor = 1.4; // 18.6 +
-                    break;
-                case "თვ-2 18.6":
-                    returnFactor = 18.6;
-                    break;
-                case "თვ-3 2.7":
-                    returnFactor = 2.7; // 9.3 1.4 +
-                    break;
-                case "თვ-3 9.3":
-                    returnFactor = 9.3;
-                    break;
-                case "თვ-3 1.4":
-                    returnFactor = 1.4;
-                    break;
-                case "თვ-4 ფიქსირებული":
-                    returnFactor = 0; // Fixed ----------------------
-                    break;
-                case "თვ-5":
-                    returnFactor = 0.5;
-                    break;
-                case "სქ":
-                    returnFactor = 9.3;
-                    break;
-                case "სგ 1.9":
-                    returnFactor = 1.9; // 4.7 +
-                    break;
-                case "სგ 4.7":
-                    returnFactor = 4.7;
-                    break;
-                case "სმ-1":
-                    returnFactor = 9.3;
-                    break;
-                case "სმ-2":
-                    returnFactor = 9.3;
-                    break;
-                case "დსშ-1 ფიქსირებული":
-                    returnFactor = 0; // Fixed ----------------------
-                    break;
-                case "დსშ-2 ფიქსირებული":
-                    returnFactor = 0; // Fixed ----------------------
-                    break;
-                case "დსშ-3 ფიქსირებული":
-                    returnFactor = 0; // Fixed ----------------------
-                    break;
-                case "დსშ-4 ფიქსირებული":
-                    returnFactor = 0; // Fixed ----------------------
-                    break;
-                case "დსშ-5 ფიქსირებული":
-                    returnFactor = 0; // Fixed ----------------------
-                    break;
-                case "დწ-1":
-                    returnFactor = 9.3;
-                    break;
-                case "დწ-2":
-                    returnFactor = 22.3;
-                    break;
-                case "დწ-3":
-                    returnFactor = 11.2;
-                    break;
-                case "დწ-4":
-                    returnFactor = 3.7;
-                    break;
-                case "სვ 2.8":
-                    returnFactor = 2.8; // 5.6 +
-                    break;
-                case "სვ 5.6":
-                    returnFactor = 5.6;
-                    break;
-                case "სც-1":
-                    returnFactor = 18.6;
-                    break;
-                case "სც-2":
-                    returnFactor = 18.6;
-                    break;
-                case "სც-3":
-                    returnFactor = 18.6;
-                    break;
-                case "სც-4":
-                    returnFactor = 18.6;
-                    break;
-                case "სწ-1":
-                    returnFactor = 27.9;
-                    break;
-                case "სწ-2":
-                    returnFactor = 27.9;
-                    break;
-                case "დს":
-                    returnFactor = 27.9;
-                    break;
-                default:
-                    returnFactor = 0; // Other
-                    break;
-            }
-
-            return returnFactor;
         }
 
         public DataTable TableRetrun()
@@ -167,6 +56,8 @@ namespace ArchSoft
 
         public void TableToPdf()
         {
+            string PathToDesktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
             PdfUnitConvertor unitCvtr = new PdfUnitConvertor();
             PdfMargins margin = new PdfMargins();
             margin.Top = unitCvtr.ConvertUnits(2.54f, PdfGraphicsUnit.Centimeter, PdfGraphicsUnit.Point);
@@ -181,7 +72,7 @@ namespace ArchSoft
 
             // Title
             PdfBrush brush1 = PdfBrushes.Black;
-            String fontFileName = "C:\\Fonts\\bpg_nino_mtavruli_normal.ttf";
+            String fontFileName = "C:\\Fonts\\font.ttf";
             PdfTrueTypeFont fontTrue = new PdfTrueTypeFont(fontFileName, 14f);
             PdfStringFormat format1 = new PdfStringFormat(PdfTextAlignment.Center);
             page.Canvas.DrawString("დაკავებულობა", fontTrue, brush1, page.Canvas.ClientSize.Width / 2, y, format1);
@@ -217,10 +108,10 @@ namespace ArchSoft
             PdfLayoutResult result = table.Draw(page, new PointF(0, y));
             y = y + result.Bounds.Height + 5;
 
-
-            doc.SaveToFile("TestTable.pdf");
+            // doc.SaveToFile($@"{PathToDesktop}\Archsoft Generated.pdf");
+            doc.SaveToFile("Archsoft Generated.pdf");
             doc.Close();
-            System.Diagnostics.Process.Start("TestTable.pdf");
+            System.Diagnostics.Process.Start("Archsoft Generated.pdf");
         }
     }
 }

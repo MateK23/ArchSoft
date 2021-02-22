@@ -41,6 +41,7 @@ namespace ArchSoft
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -101,9 +102,9 @@ namespace ArchSoft
             this.currentDir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(249)))));
             this.currentDir.Location = new System.Drawing.Point(13, 48);
             this.currentDir.Name = "currentDir";
-            this.currentDir.Size = new System.Drawing.Size(81, 16);
+            this.currentDir.Size = new System.Drawing.Size(134, 16);
             this.currentDir.TabIndex = 6;
-            this.currentDir.Text = "Current Dir";
+            this.currentDir.Text = "Program Directory";
             // 
             // label3
             // 
@@ -125,16 +126,16 @@ namespace ArchSoft
             this.outputFormatTextBox.Location = new System.Drawing.Point(11, 42);
             this.outputFormatTextBox.Multiline = true;
             this.outputFormatTextBox.Name = "outputFormatTextBox";
-            this.outputFormatTextBox.Size = new System.Drawing.Size(517, 20);
+            this.outputFormatTextBox.Size = new System.Drawing.Size(166, 20);
             this.outputFormatTextBox.TabIndex = 9;
-            this.outputFormatTextBox.Text = "output";
+            this.outputFormatTextBox.Text = "Archsoft Generated";
             // 
             // fileFormat
             // 
             this.fileFormat.AutoSize = true;
             this.fileFormat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fileFormat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(249)))));
-            this.fileFormat.Location = new System.Drawing.Point(534, 43);
+            this.fileFormat.Location = new System.Drawing.Point(183, 43);
             this.fileFormat.Name = "fileFormat";
             this.fileFormat.Size = new System.Drawing.Size(34, 16);
             this.fileFormat.TabIndex = 10;
@@ -183,11 +184,22 @@ namespace ArchSoft
             this.panel3.Size = new System.Drawing.Size(762, 76);
             this.panel3.TabIndex = 14;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(516, 301);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(241, 13);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Development Build. Settings are not implemented.";
+            // 
             // UserControl2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -219,5 +231,6 @@ namespace ArchSoft
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label5;
     }
 }

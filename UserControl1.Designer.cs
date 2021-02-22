@@ -31,12 +31,11 @@ namespace ArchSoft
         {
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.type1 = new System.Windows.Forms.ComboBox();
-            this.type2 = new System.Windows.Forms.ComboBox();
             this.result = new System.Windows.Forms.TextBox();
-            this.factor = new System.Windows.Forms.TextBox();
+            this.type2 = new System.Windows.Forms.TextBox();
             this.scale = new System.Windows.Forms.TextBox();
+            this.factor = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.lab1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,8 +45,8 @@ namespace ArchSoft
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.print = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -67,35 +66,19 @@ namespace ArchSoft
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.panel1.Controls.Add(this.tableLayoutPanel1);
+            this.panel1.Controls.Add(this.type1);
+            this.panel1.Controls.Add(this.result);
+            this.panel1.Controls.Add(this.type2);
+            this.panel1.Controls.Add(this.scale);
+            this.panel1.Controls.Add(this.factor);
             this.panel1.Location = new System.Drawing.Point(9, 64);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(763, 33);
             this.panel1.TabIndex = 13;
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.98835F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.01165F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 165F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 186F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 56F));
-            this.tableLayoutPanel1.Controls.Add(this.type1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.type2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.result, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.factor, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.scale, 2, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(757, 27);
-            this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
-            // 
             // type1
             // 
+            this.type1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.type1.FormattingEnabled = true;
             this.type1.Items.AddRange(new object[] {
             "თვ-1",
@@ -129,52 +112,60 @@ namespace ArchSoft
             "სწ-1",
             "სწ-2",
             "დს"});
-            this.type1.Location = new System.Drawing.Point(3, 3);
+            this.type1.Location = new System.Drawing.Point(7, 6);
             this.type1.Name = "type1";
             this.type1.Size = new System.Drawing.Size(151, 21);
             this.type1.TabIndex = 2;
             this.type1.SelectedIndexChanged += new System.EventHandler(this.type1_SelectedIndexChanged);
             // 
-            // type2
-            // 
-            this.type2.FormattingEnabled = true;
-            this.type2.Location = new System.Drawing.Point(160, 3);
-            this.type2.Name = "type2";
-            this.type2.Size = new System.Drawing.Size(186, 21);
-            this.type2.TabIndex = 7;
-            this.type2.SelectedIndexChanged += new System.EventHandler(this.type2_SelectedIndexChanged);
-            // 
             // result
             // 
-            this.result.Location = new System.Drawing.Point(703, 3);
+            this.result.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.result.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.result.Location = new System.Drawing.Point(707, 7);
             this.result.Name = "result";
             this.result.Size = new System.Drawing.Size(50, 20);
             this.result.TabIndex = 9;
             this.result.TextChanged += new System.EventHandler(this.result_TextChanged);
             // 
-            // factor
+            // type2
             // 
-            this.factor.Location = new System.Drawing.Point(517, 3);
-            this.factor.Name = "factor";
-            this.factor.Size = new System.Drawing.Size(180, 20);
-            this.factor.TabIndex = 8;
-            this.factor.TextChanged += new System.EventHandler(this.factor_TextChanged);
+            this.type2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.type2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.type2.Location = new System.Drawing.Point(164, 7);
+            this.type2.Name = "type2";
+            this.type2.Size = new System.Drawing.Size(186, 20);
+            this.type2.TabIndex = 10;
+            this.type2.TextChanged += new System.EventHandler(this.type2_TextChanged);
             // 
             // scale
             // 
-            this.scale.Location = new System.Drawing.Point(352, 4);
+            this.scale.BackColor = System.Drawing.SystemColors.Window;
+            this.scale.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.scale.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scale.Location = new System.Drawing.Point(356, 7);
             this.scale.Margin = new System.Windows.Forms.Padding(3, 4, 3, 3);
             this.scale.Name = "scale";
             this.scale.Size = new System.Drawing.Size(159, 20);
             this.scale.TabIndex = 4;
             this.scale.TextChanged += new System.EventHandler(this.scale_TextChanged);
             // 
+            // factor
+            // 
+            this.factor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.factor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.factor.Location = new System.Drawing.Point(521, 7);
+            this.factor.Name = "factor";
+            this.factor.Size = new System.Drawing.Size(180, 20);
+            this.factor.TabIndex = 8;
+            this.factor.TextChanged += new System.EventHandler(this.factor_TextChanged);
+            // 
             // btnAdd
             // 
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAdd.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnAdd.Location = new System.Drawing.Point(616, 10);
+            this.btnAdd.Location = new System.Drawing.Point(519, 10);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 14;
@@ -187,7 +178,7 @@ namespace ArchSoft
             this.lab1.AutoSize = true;
             this.lab1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lab1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(249)))));
-            this.lab1.Location = new System.Drawing.Point(12, 48);
+            this.lab1.Location = new System.Drawing.Point(13, 48);
             this.lab1.Name = "lab1";
             this.lab1.Size = new System.Drawing.Size(42, 13);
             this.lab1.TabIndex = 16;
@@ -198,7 +189,7 @@ namespace ArchSoft
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(249)))));
-            this.label3.Location = new System.Drawing.Point(169, 48);
+            this.label3.Location = new System.Drawing.Point(170, 48);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 13);
             this.label3.TabIndex = 17;
@@ -209,7 +200,7 @@ namespace ArchSoft
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(249)))));
-            this.label5.Location = new System.Drawing.Point(361, 48);
+            this.label5.Location = new System.Drawing.Point(362, 48);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 13);
             this.label5.TabIndex = 18;
@@ -231,7 +222,7 @@ namespace ArchSoft
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(146)))), ((int)(((byte)(249)))));
-            this.label7.Location = new System.Drawing.Point(720, 48);
+            this.label7.Location = new System.Drawing.Point(713, 48);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(36, 13);
             this.label7.TabIndex = 20;
@@ -265,7 +256,7 @@ namespace ArchSoft
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDelete.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnDelete.Location = new System.Drawing.Point(697, 10);
+            this.btnDelete.Location = new System.Drawing.Point(600, 10);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 22;
@@ -273,11 +264,25 @@ namespace ArchSoft
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // print
+            // 
+            this.print.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.print.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.print.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.print.Location = new System.Drawing.Point(681, 10);
+            this.print.Name = "print";
+            this.print.Size = new System.Drawing.Size(75, 23);
+            this.print.TabIndex = 23;
+            this.print.Text = "Print";
+            this.print.UseVisualStyleBackColor = true;
+            this.print.Click += new System.EventHandler(this.print_Click);
+            // 
             // UserControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.Controls.Add(this.print);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label7);
@@ -291,8 +296,7 @@ namespace ArchSoft
             this.Name = "UserControl1";
             this.Size = new System.Drawing.Size(781, 398);
             this.panel1.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -304,7 +308,6 @@ namespace ArchSoft
 
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ComboBox type1;
         private System.Windows.Forms.TextBox scale;
         private System.Windows.Forms.Button btnAdd;
@@ -315,9 +318,10 @@ namespace ArchSoft
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox type2;
         private System.Windows.Forms.TextBox result;
         private System.Windows.Forms.TextBox factor;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.TextBox type2;
+        private System.Windows.Forms.Button print;
     }
 }
